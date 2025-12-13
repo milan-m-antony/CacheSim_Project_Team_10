@@ -27,7 +27,7 @@ LRU is a popular and effective algorithm that relies on temporal locality - if a
    ```bash
    npm run dev
    ```
-   Open [http://localhost:3000](http://localhost:3000) to view the simulation.
+   Open [http://localhost:3000](http://localhost:3000) to view the simulation
 
 ## Algorithm Details
 
