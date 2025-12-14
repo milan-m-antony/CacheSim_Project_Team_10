@@ -30,7 +30,7 @@ Direct Mapping is a hardware cache organization where each memory block maps to 
    ```
    Open [http://localhost:3000](http://localhost:3000) to view the simulation.
 
-## Algorithm Details
+## Algorithm Details of Direct Mapping
 
 **Direct Mapping** uses the formula: `Cache Line = (Block Address) mod (Cache Size)`
 - **Deterministic**: Each block has exactly one possible cache line
