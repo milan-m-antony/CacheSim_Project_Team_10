@@ -22,7 +22,7 @@ This project provides interactive simulations for five cache replacement and map
 4. **Direct Mapping** - Fixed block-to-line mapping
 5. **Associative Mapping** - Flexible block placement
 
-Each algorithm includes:
+Each algorithm includes:-
 - **Step-by-step visualization** of cache operations
 - **Real-time statistics** (hits, misses, hit ratio)
 - **Detailed explanations** of each step
