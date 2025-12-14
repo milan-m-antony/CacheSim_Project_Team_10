@@ -27,7 +27,7 @@ Each algorithm includes:-
 - **Real-time statistics** (hits, misses, hit ratio)
 - **Detailed explanations** of each step
 - **Algorithm documentation** with use cases and trade-offs
-- **Interactive controls** to configure cache size and memory sequences
+- **Interactive controls** to configure cache size and memory sequene.
 
 ## Installation & Usage
 
