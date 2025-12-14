@@ -1,12 +1,6 @@
 
 import { AlgorithmType, AlgSettings, SimulationResult } from '../types';
-import {
-  simulateFIFO,
-  simulateLRU,
-  simulateLFU,
-  simulateDirect,
-  simulateAssociative
-} from '../services/cacheAlgorithms';
+import { simulateFIFO } from '../services/cacheAlgorithms';
 
 export const generateRandomSequence = (length: number, maxVal: number): string => {
   return Array.from({ length }, () => Math.floor(Math.random() * maxVal)).join(' ');
@@ -28,18 +22,6 @@ export const runSimulation = (
   const references = parseReferences(settings.references);
   const size = settings.cacheSize;
 
-  switch (type) {
-    case AlgorithmType.FIFO:
-      return simulateFIFO(references, size);
-    case AlgorithmType.LRU:
-      return simulateLRU(references, size);
-    case AlgorithmType.LFU:
-      return simulateLFU(references, size, settings.lfuTieBreak);
-    case AlgorithmType.DIRECT:
-      return simulateDirect(references, size);
-    case AlgorithmType.ASSOCIATIVE:
-      return simulateAssociative(references, size, settings.associativePolicy);
-    default:
-      return simulateFIFO(references, size);
-  }
+  // This app is focused on FIFO only — always run FIFO simulation.
+  return simulateFIFO(references, size);
 };
