@@ -45,7 +45,7 @@ Each algorithm includes:-
 
 2. **Install dependencies**
    ```bash
-   npm install
+   npm install to install
    ```
 
 3. **Start the development server**
