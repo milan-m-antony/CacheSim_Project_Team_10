@@ -1,11 +1,11 @@
 
 import { AlgorithmType, AlgSettings, SimulationResult } from '../types';
-import {
-  simulateFIFO,
-  simulateLRU,
-  simulateLFU,
-  simulateDirect,
-  simulateAssociative
+import { 
+  simulateFIFO, 
+  simulateLRU, 
+  simulateLFU, 
+  simulateDirect, 
+  simulateAssociative 
 } from '../services/cacheAlgorithms';
 
 export const generateRandomSequence = (length: number, maxVal: number): string => {
@@ -28,18 +28,19 @@ export const runSimulation = (
   const references = parseReferences(settings.references);
   const size = settings.cacheSize;
 
+  // Run the appropriate simulation based on algorithm type
   switch (type) {
     case AlgorithmType.FIFO:
       return simulateFIFO(references, size);
     case AlgorithmType.LRU:
       return simulateLRU(references, size);
     case AlgorithmType.LFU:
-      return simulateLFU(references, size, settings.lfuTieBreak);
+      return simulateLFU(references, size, settings.lfuTieBreak || 'LRU');
     case AlgorithmType.DIRECT:
       return simulateDirect(references, size);
     case AlgorithmType.ASSOCIATIVE:
-      return simulateAssociative(references, size, settings.associativePolicy);
+      return simulateAssociative(references, size, settings.associativePolicy || 'LRU');
     default:
-      return simulateFIFO(references, size);
+      throw new Error(`Unknown algorithm type: ${type}`);
   }
 };
