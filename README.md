@@ -38,19 +38,24 @@ Direct Mapping is a hardware cache organization where each memory block maps to 
 - **Fast Lookup**: Only one cache line needs to be checked
 - **Conflict Misses**: Multiple blocks competing for same line
 - **Low Cost**: It is a low cost technique as it requires minimal hardware
+- **Simple Implementation**:It is the simplest cache mapping technique to implement
 
 ### Advantages of Direct Mapping
 - Blazing fast lookup (O(1))
 - Simple hardware implementation
 - Low power consumption
 - Deterministic access time
-- Minimal hardware cost//
+- Minimal hardware cost
+- No need of replacement polcy
+- Predictable performance
 
 ### Disadvantages
 - High conflict miss rate
 - Poor cache utilization
 - No flexibility in placement
 - Thrashing with certain patterns
+- Not suitable for larger caches
+- Not adaptive
 
 ---
 © 2024 Nehu Sam Abraham
