@@ -58,7 +58,7 @@ export const associativeProject: ProjectDef = {
         "Step 11: Replace victim with R.",
         "Step 12: Update the queue or LRU list accordingly.",
         "Step 13: Continue to next reference.",
-        "Step 17: Repeat until all references are processed."
+        "Step 14: Repeat until all references are processed."
       ]
     }
   }
