@@ -49,7 +49,7 @@ Direct Mapping is a hardware cache organization where each memory block maps to 
 - No need of replacement polcy
 - Predictable performance
 
-### Disadvantages
+### Disadvantages of Direct Mapping
 - High conflict miss rate
 - Poor cache utilization
 - No flexibility in placement

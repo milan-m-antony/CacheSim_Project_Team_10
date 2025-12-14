@@ -32,6 +32,7 @@ export const directProject: ProjectDef = {
         "Low power consumption: Only one tag comparison per access, minimal energy usage.",
         "Deterministic access time: Always takes the same time to check, making timing predictable.",
         "Minimal hardware cost: Cheapest cache organization to implement.",
+        "Fast Access Time: It provides the fastest access as cache controller can directly map to the required location",
         "Disadvantages: High conflict miss rate, poor cache utilization (some lines may stay empty while others thrash), no flexibility in placement."
       ]
     },
@@ -49,7 +50,7 @@ export const directProject: ProjectDef = {
       ]
     },
     algorithm: {
-      title: "Direct Mapping Algorithm",
+      title: "The Direct Mapping Algorithm",
       content: [
         "Step 1: Initialize a cache of size N.",
         "Step 2: For each memory reference R, repeat Steps 3–7.",
