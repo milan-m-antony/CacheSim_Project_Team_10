@@ -43,9 +43,9 @@ FIFO is one of the simplest cache replacement algorithms that treats the cache l
 - O(1) time complexity
 
 ### Disadvantages
-- Poor performance with looping access patterns
+- Poor performance with looping access pattern
 - Doesn't adapt to working sets
 - Can evict frequently-used blocks
 
----
+----
 © 2024 Milan M Antony
