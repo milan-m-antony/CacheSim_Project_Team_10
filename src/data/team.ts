@@ -1,4 +1,4 @@
-
-import { TeamMember } from '../types';
-
-export const TEAM_MEMBERS: TeamMember[] = [];
+export const TEAM_MEMBERS = [
+  { name: 'Milan M Antony', role: 'Project Lead' },
+  { name: 'Team', role: 'Contributors' }
+];
