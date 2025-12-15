@@ -24,7 +24,7 @@ class FIFOCache:
         print("Total Misses:", self.misses)
         print("Hit Ratio:", self.hits / total)
 
-# Example
+
 fifo = FIFOCache(3)
 refs = [1, 2, 3, 1, 4, 5]
 for r in refs:
