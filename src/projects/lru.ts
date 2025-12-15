@@ -14,15 +14,28 @@ export const lruProject: ProjectDef = {
     details: {
       title: "What is LRU?",
       content: [
+<<<<<<< HEAD
+        "Least Recently Used (LRU) is a popular replacement algorithm that relies on the 'Temporal Locality' principle: if an item was accessed recently, it is likely to be accessed again soon.",
+        "LRU keeps track of usage history. When eviction is needed, it removes the item that has not been used for the longest period of time."
+=======
         "Least Recently Used (LRU) is a popular and effective replacement algorithm that relies on the 'Temporal Locality' principle: if an item was accessed recently, it is likely to be accessed again soon.",
         "LRU keeps track of when each block was last accessed. When eviction is needed, it removes the item that has not been used for the longest period of time, assuming it's least likely to be needed again.",
         "Unlike FIFO, LRU is 'smart' - it adapts to access patterns. Every time a block is accessed (hit or miss), its recency is updated, giving frequently and recently accessed blocks priority to stay in cache.",
         "Real-world analogy: Like organizing your desk - you keep frequently used items within reach and push rarely-used items to the back. Eventually, the items you haven't touched in the longest time get moved to storage."
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
       ]
     },
     uses: {
       title: "Uses & Advantages",
       content: [
+<<<<<<< HEAD
+        "LRU is widely used in modern operating systems, database buffer pools, and web browsers."
+      ],
+      bullets: [
+        "High performance: Adapts well to changing access patterns.",
+        "Handles loops: Works well for repeated data access patterns.",
+        "Intuitive: Closely mimics how humans manage working memory."
+=======
         "LRU is widely used in modern operating systems (page replacement), database buffer pools, web browsers (cache management), and CDN edge servers.",
         "It's the gold standard for general-purpose caching because it balances performance with reasonable implementation complexity."
       ],
@@ -33,11 +46,18 @@ export const lruProject: ProjectDef = {
         "Near-optimal for many workloads: Often approaches the performance of the theoretical optimal algorithm (Bélády's).",
         "Self-adjusting: Automatically adapts when access patterns change over time.",
         "Disadvantages: Higher implementation complexity than FIFO, requires tracking access order, vulnerable to sequential scans that can flush the entire cache."
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
       ]
     },
     working: {
       title: "How it Works",
       content: [
+<<<<<<< HEAD
+        "The cache is organized like a stack or a linked list.",
+        "1. When a block is accessed (Hit or Miss), it is moved to the 'Most Recently Used' (MRU) position.",
+        "2. All other blocks are effectively pushed down.",
+        "3. When space is needed, the block at the 'Least Recently Used' position (bottom of stack) is evicted."
+=======
         "The cache is organized like a stack or doubly-linked list, with the Most Recently Used (MRU) item at the top and Least Recently Used (LRU) item at the bottom.",
         "1. When a block is accessed (Hit or Miss), it is moved to the MRU position (top of the stack).",
         "2. All other blocks effectively shift down in the recency order.",
@@ -45,6 +65,7 @@ export const lruProject: ProjectDef = {
         "4. This creates a dynamic ranking where blocks 'age out' if not accessed.",
         "Example: With cache [1,2,3] and accessing 2, the order becomes [2,1,3]. If 4 arrives, 3 (LRU) is evicted, resulting in [4,2,1].",
         "Implementation note: Can use a hash map + doubly-linked list for O(1) access and update operations."
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
       ]
     },
     algorithm: {

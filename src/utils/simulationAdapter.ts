@@ -1,11 +1,20 @@
 
 import { AlgorithmType, AlgSettings, SimulationResult } from '../types';
+<<<<<<< HEAD
+import {
+  simulateFIFO,
+  simulateLRU,
+  simulateLFU,
+  simulateDirect,
+  simulateAssociative
+=======
 import { 
   simulateFIFO, 
   simulateLRU, 
   simulateLFU, 
   simulateDirect, 
   simulateAssociative 
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
 } from '../services/cacheAlgorithms';
 
 export const generateRandomSequence = (length: number, maxVal: number): string => {
@@ -28,13 +37,25 @@ export const runSimulation = (
   const references = parseReferences(settings.references);
   const size = settings.cacheSize;
 
+<<<<<<< HEAD
+=======
   // Run the appropriate simulation based on algorithm type
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
   switch (type) {
     case AlgorithmType.FIFO:
       return simulateFIFO(references, size);
     case AlgorithmType.LRU:
       return simulateLRU(references, size);
     case AlgorithmType.LFU:
+<<<<<<< HEAD
+      return simulateLFU(references, size, settings.lfuTieBreak);
+    case AlgorithmType.DIRECT:
+      return simulateDirect(references, size);
+    case AlgorithmType.ASSOCIATIVE:
+      return simulateAssociative(references, size, settings.associativePolicy);
+    default:
+      return simulateFIFO(references, size);
+=======
       return simulateLFU(references, size, settings.lfuTieBreak || 'LRU');
     case AlgorithmType.DIRECT:
       return simulateDirect(references, size);
@@ -42,5 +63,6 @@ export const runSimulation = (
       return simulateAssociative(references, size, settings.associativePolicy || 'LRU');
     default:
       throw new Error(`Unknown algorithm type: ${type}`);
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
   }
 };

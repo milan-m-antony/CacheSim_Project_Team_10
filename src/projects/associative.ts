@@ -14,15 +14,28 @@ export const associativeProject: ProjectDef = {
     details: {
       title: "What is Associative Mapping?",
       content: [
+<<<<<<< HEAD
+        "Fully Associative Mapping allows a memory block to be placed in ANY available cache line.",
+        "It offers the most flexibility but requires the hardware to search the entire cache to find a block."
+=======
         "Fully Associative Mapping is the opposite of Direct Mapping - it allows a memory block to be placed in ANY available cache line, providing maximum flexibility.",
         "There are no restrictions on placement. When a block needs to be loaded, it can go into any empty slot. When all slots are full, a replacement policy (LRU, FIFO, etc.) decides which block to evict.",
         "The hardware must search ALL cache lines in parallel to find a block, requiring complex comparison circuitry but eliminating conflict misses entirely.",
         "Real-world analogy: Like a parking garage with no assigned spots - you can park anywhere there's space. To find your car, you must check every spot, but you'll never be turned away if there's any empty space."
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
       ]
     },
     uses: {
       title: "Uses & Advantages",
       content: [
+<<<<<<< HEAD
+        "Used in smaller caches (like TLBs) where avoiding conflict misses is more important than hardware complexity."
+      ],
+      bullets: [
+        "No conflict misses: A block is only evicted if the cache is strictly full.",
+        "Flexible: Utilization of cache space is maximized.",
+        "Can use any replacement policy (LRU, FIFO, Random)."
+=======
         "Used in small, critical caches like TLBs (Translation Lookaside Buffers), where avoiding conflict misses is crucial and the cache is small enough to search quickly.",
         "Also used in victim caches and small L1 data caches where maximum hit rate is more important than hardware complexity."
       ],
@@ -33,11 +46,18 @@ export const associativeProject: ProjectDef = {
         "Can use any replacement policy: LRU, FIFO, Random, or custom policies can be implemented.",
         "Optimal space utilization: Every cache line can be used, no wasted space.",
         "Disadvantages: Expensive hardware (parallel comparators for all lines), higher power consumption, slower than direct mapping, complex replacement logic needed."
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
       ]
     },
     working: {
       title: "How it Works",
       content: [
+<<<<<<< HEAD
+        "1. When searching for a block, all cache tags are compared simultaneously (in parallel).",
+        "2. If found -> Hit.",
+        "3. If not found -> Miss. The block can be placed in any empty slot.",
+        "4. If full, a replacement algorithm (like LRU or FIFO) decides which block to evict."
+=======
         "1. When searching for a block, ALL cache tags are compared simultaneously in parallel using dedicated hardware comparators.",
         "2. If any line matches → HIT. The data is retrieved from that line.",
         "3. If no line matches → MISS. The block can be placed in any empty slot.",
@@ -45,6 +65,7 @@ export const associativeProject: ProjectDef = {
         "5. The new block replaces the victim and the replacement policy's metadata is updated.",
         "Example: With 4-line cache using LRU and blocks [1,2,3,4], accessing block 5 evicts the least recently used block (say 1), resulting in [5,2,3,4]. Block 5 can go into any position - the replacement policy decides.",
         "Hardware requirement: N parallel comparators for N cache lines, plus logic for the replacement policy."
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
       ]
     },
     algorithm: {

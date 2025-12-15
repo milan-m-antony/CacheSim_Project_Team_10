@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
     "pdfkit": "^0.17.2",
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

@@ -14,15 +14,27 @@ export const lfuProject: ProjectDef = {
     details: {
       title: "What is LFU?",
       content: [
+<<<<<<< HEAD
+        "Least Frequently Used (LFU) bases its decisions on popularity. It assumes that an item used many times is important and should be kept.",
+        "It maintains a frequency counter for every block. When the cache is full, the block with the lowest access count is removed."
+=======
         "Least Frequently Used (LFU) bases its eviction decisions on popularity rather than recency. It assumes that blocks accessed many times are important and should be kept in cache.",
         "LFU maintains a frequency counter for every block, tracking how many times it has been accessed. When the cache is full, the block with the lowest access count is removed.",
         "Unlike LRU which forgets old history, LFU has 'long-term memory' - a block accessed 100 times yesterday is valued more than a block accessed once today.",
         "Real-world analogy: Like a library keeping popular books on display shelves - books that are checked out frequently stay accessible, while rarely-borrowed books get moved to storage, regardless of when they were last borrowed."
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
       ]
     },
     uses: {
       title: "Uses & Advantages",
       content: [
+<<<<<<< HEAD
+        "LFU is excellent for static access patterns where certain data is permanently popular (e.g., CDN caching, DNS caches)."
+      ],
+      bullets: [
+        "Resistant to scan pollution: One-time sequential scans don't flush out popular items.",
+        "Long-term optimization: Keeps historically popular items."
+=======
         "LFU excels in scenarios with static or slowly-changing access patterns where certain data is permanently popular (e.g., CDN caching, DNS caches, database query caches).",
         "It's ideal when you want to protect 'hot' data from being evicted by temporary bursts of one-time accesses."
       ],
@@ -32,11 +44,19 @@ export const lfuProject: ProjectDef = {
         "Protects hot data: Frequently accessed blocks are very difficult to evict, providing stable performance.",
         "Good for stable workloads: Performs excellently when access patterns don't change dramatically.",
         "Disadvantages: Slow to adapt to changing patterns, suffers from 'cache pollution' (old popular items stay too long), requires more memory for counters, complex tie-breaking needed."
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
       ]
     },
     working: {
       title: "How it Works",
       content: [
+<<<<<<< HEAD
+        "Every cache block has an associated counter.",
+        "1. New blocks are inserted with a frequency of 1.",
+        "2. On a Hit, the counter for that block is incremented.",
+        "3. On eviction, find the block with the minimum counter value.",
+        "4. Tie-breaking: If multiple blocks have the same low frequency, a secondary policy (like LRU or FIFO) is used to pick the victim."
+=======
         "Every cache block has an associated frequency counter that tracks the number of accesses.",
         "1. New blocks are inserted with an initial frequency of 1.",
         "2. On a Hit, the counter for that block is incremented (frequency++).",
@@ -45,6 +65,7 @@ export const lfuProject: ProjectDef = {
         "5. The victim is evicted and the new block takes its place with frequency = 1.",
         "Example: Cache [A(5), B(3), C(1)] with frequencies in parentheses. When D arrives, C is evicted (lowest frequency), resulting in [A(5), B(3), D(1)].",
         "Challenge: Counters never decrease, so old popular blocks can become 'immortal' even if they're no longer accessed."
+>>>>>>> e4a45b02ae5f2b80aac243d5593bb0eee767bf2c
       ]
     },
     algorithm: {
